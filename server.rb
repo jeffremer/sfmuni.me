@@ -18,7 +18,7 @@ post '/sms' do
     direction = bus.direction_at(direction)
     stop = direction.stop_at(stop.join(' '))
     msg = "#{bus.title} #{direction.name} at #{stop.title}: #{stop.predictions.collect{|t|t.minutes + 'min'}.join(', ')}"
-    send_sms(params[:To], msg)
+    send_sms(params[:From], msg)
     msg
   else
     status 400
