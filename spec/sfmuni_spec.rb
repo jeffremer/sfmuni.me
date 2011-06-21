@@ -51,9 +51,10 @@ describe "SFMuni" do
 
     describe "invalid /sms request" do
       it "should respond bad requst with an invalid Twilio request" do
-        post('/sms', @sms_params.merge!({:Body => ''}))
+        post('/sms', @sms_params.merge!({:Body => nil}))
         last_response.should_not be_successful
         last_response.status.should == 400      
+        last_response.body.should == "400 Bad Request Body is required"
       end
       
       it "should not respond to GET" do
