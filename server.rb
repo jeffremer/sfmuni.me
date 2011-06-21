@@ -4,6 +4,7 @@ end
 
 require 'sinatra'
 require 'muni'
+require 'twiliolib'
 
 get '/' do
   "Hello World"
@@ -16,7 +17,9 @@ post '/sms' do
     bus = Muni::Route.find(route)
     direction = bus.direction_at(direction)
     stop = direction.stop_at(stop.join(' '))
-    "#{bus.title} #{direction.name} at #{stop.title}: #{stop.predictions.collect{|t|t.minutes + 'min'}.join(', ')}"
+    msg = "#{bus.title} #{direction.name} at #{stop.title}: #{stop.predictions.collect{|t|t.minutes + 'min'}.join(', ')}"
+    send_sms(params[:To], msg)
+    msg
   else
     status 400
     "400 Bad Request #{validations[:errors].join(', ')}"    
@@ -41,4 +44,15 @@ def valid?(params)
   end
 
   {:success => errors.empty?, :errors => errors}
+end
+
+def send_sms(to, message)
+  account = Twilio::RestAccount.new(ENV['TWILIO_SID'], ENV['TWILIO_KEY'])
+  t = {
+      'From' => ENV['TWILIO_NUMBER'],
+      'To'   => to,
+      'Body' => message
+  }
+  url = "/2010-04-01/Accounts/#{ENV['TWILIO_SID']}/SMS/Messages"
+  resp = account.request(url, "POST", t)
 end

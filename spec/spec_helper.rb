@@ -5,7 +5,7 @@ require 'sinatra'
 require 'rack/test'
 require 'rspec'
 require 'webmock/rspec'
-include WebMock
+include WebMock::API
 
 # set test environment
 set :environment, :test
