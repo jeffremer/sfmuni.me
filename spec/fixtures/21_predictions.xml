@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<body copyright="All data copyright San Francisco Muni 2011."> 
+<predictions agencyTitle="San Francisco Muni" routeTitle="21-Hayes" routeTag="21" stopTitle="Hayes St &amp; Shrader St" stopTag="7561"> 
+  <direction title="Inbound to Steuart Terminal"> 
+  <prediction epochTime="1308690600361" seconds="102" minutes="1" isDeparture="false" affectedByLayover="true" dirTag="21_IB3" vehicle="8199" block="2102" tripTag="4400853" /> 
+  <prediction epochTime="1308691180519" seconds="682" minutes="11" isDeparture="false" affectedByLayover="true" dirTag="21_IB3" vehicle="8136" block="2107" tripTag="4400854" /> 
+  <prediction epochTime="1308692380519" seconds="1882" minutes="31" isDeparture="false" affectedByLayover="true" dirTag="21_IB3" vehicle="8120" block="2103" tripTag="4400785" /> 
+  <prediction epochTime="1308692980519" seconds="2482" minutes="41" isDeparture="false" affectedByLayover="true" dirTag="21_IB3" vehicle="8114" block="2110" tripTag="4400801" /> 
+  <prediction epochTime="1308693760867" seconds="3263" minutes="54" isDeparture="false" affectedByLayover="true" dirTag="21_IB3" vehicle="8134" block="2108" tripTag="4400802" /> 
+  </direction> 
+<message text="www.sfmta.com or&#10;311 for Muni info."/> 
+<message text="Muni Pass prices,&#10;Special Event &amp;&#10;Cable Car fares&#10;increase July 1.&#10;No change to $2.00&#10;or $.75 cash fare."/> 
+<message text="PROOF OF PAYMENT&#10;is required when&#10;on a Muni vehicle&#10;or in a station."/> 
+</predictions> 
+</body>
