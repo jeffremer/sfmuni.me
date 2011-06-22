@@ -4,9 +4,14 @@ end
 
 require 'sinatra'
 require 'muni'
+require 'sass'
 
 get '/' do
-  "Hello World"
+  haml :index
+end
+
+get '/app.css' do
+  scss :app
 end
 
 post '/sms' do

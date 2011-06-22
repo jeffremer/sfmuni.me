@@ -1,0 +1,28 @@
+body {
+	background-color: #000;
+	color: #FFF;
+}
+
+a:link, a:visited, a:hover, a:active {
+	color: #ECECEC;
+}
+#container {
+	width: 320px;
+	margin: 20px auto;
+	ol {
+		margin: 0;
+		padding: 0;
+	}
+}	
+
+#help {
+	text-align: center;
+}
+
+.mono {
+	font-family: "andale mono", "lucida console", monospace;
+	font-size: 12px;
+	padding: 1em;
+	border: 1px solid #333;
+	background-color: #222;
+}

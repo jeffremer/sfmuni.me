@@ -43,17 +43,10 @@ describe "SFMuni" do
     
       it "should respond with predictions" do
         post('/sms', @sms_params)      
-        last_response.body.should_not be_empty
+        last_response.body.should == "<?xml version=\"1.1\" encoding=\"UTF-8\"?>\n<Response>\n  <Sms>21-Hayes Inbound to Steuart Terminal at Hayes St &amp; Shrader St: 1min, 11min, 31min, 41min, 54min</Sms>\n</Response>\n"
         WebMock.should have_requested(:get, @route_url)
         WebMock.should have_requested(:get, @predictions_url)        
       end 
-      
-      it "should SMS predictions to the To number" do
-        post('/sms', @sms_params)      
-        last_response.body.should_not be_empty
-        WebMock.should have_requested(:get, @route_url)
-        WebMock.should have_requested(:get, @predictions_url)
-      end
     end
 
     describe "invalid /sms request" do

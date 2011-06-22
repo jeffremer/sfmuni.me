@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %title= 'SF Muni'    
+    %link{"rel" => "stylesheet", "href" => "app.css", "type" => "text/css"}
+    %meta{"name" => "viewport", :content => "width=device-width,user-scalable=false"}
+  %body
+    #container
+      %img{:src => '/images/sfmuni.me.png'}
+      %ol
+        %li
+          %p Text your bus, direction &amp; stop to <a href="sms:(415) 968-6488">(415) 968-6488</a>.
+          %p For example:
+          %p.mono 21 outbound hayes and central
+        %li
+          %p Get bus times sent back to you via SMS.
+          %p For example:
+          %p.mono 21-Hayes Inbound to Steuart Terminal at Hayes St &amp; Shrader St: 1min, 11min, 31min, 41min, 54min 
+        
+      #help
+        %p Didn't get a response, or got the wrong bus information?
+        %p 
+          %a{:href=>"help@sfmuni.me"} Contact us.
+        %p Include your phone number and the message you sent us.                     

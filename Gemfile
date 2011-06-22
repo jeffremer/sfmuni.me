@@ -1,6 +1,7 @@
 source :gemcutter
 
 gem "sinatra"
+gem "haml"
 gem "muni"
 gem "twiliolib"
 
